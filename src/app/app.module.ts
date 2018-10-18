@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthGuard } from './core/guards/auth.guard';
+import { LoginGuard } from './core/guards/login.guard';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,10 @@ import { AuthGuard } from './core/guards/auth.guard';
     CoreModule,
     HttpClientModule
   ],
-  providers: [AuthGuard],
+  providers: [
+    AuthGuard,
+    LoginGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
